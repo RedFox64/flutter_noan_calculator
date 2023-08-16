@@ -71,7 +71,7 @@ class Calculator extends StatelessWidget {
               children: [
                 Flexible(
                   flex: 1,
-                  child: NumberFieldWithState(label: "Cумма кредита", streamData: bloc.creditAmountField),
+                  child: NumberField(label: "Cумма кредита", streamData: bloc.creditAmountField),
                 ),
               ],
             ),
@@ -82,13 +82,13 @@ class Calculator extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Flexible(
-                  child: NumberFieldWithState(label: "Срок кредита (мес.)", streamData: bloc.countMonthField),
+                  child: NumberField(label: "Срок кредита (мес.)", streamData: bloc.countMonthField),
                 ),
                 const SizedBox(
                   width: 10,
                 ),
                 Flexible(
-                    child: NumberFieldWithState(
+                    child: NumberField(
                   label: "Годовая ставка (%)",
                   streamData: bloc.rateAmountField,
                 ))

@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
 class FieldDataStream<T> {
+  late final TextEditingController controller;
   final T? _defaultValue;
   final StreamTransformer<T, T>? _validate;
 
@@ -18,5 +20,7 @@ class FieldDataStream<T> {
 
   FieldDataStream({T? defaultValue, StreamTransformer<T, T>? validateField})
       : _defaultValue = defaultValue,
-        _validate = validateField;
+        _validate = validateField {
+    controller = TextEditingController(text: defaultValue?.toString());
+  }
 }
